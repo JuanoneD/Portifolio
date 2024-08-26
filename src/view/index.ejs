@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portifolio Juan Diego</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
     <header>
@@ -94,6 +95,9 @@
             </div>
         </div>
         <div class="Titles roboto-bold-italic">Projetos</div>
+        <div class="container">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal"  data-bs-target="#AddNewProject">Adicionar novo projeto</button>
+        </div>
         <div id="DisplayProjects">
             <div class="Project">
                 <img src="https://www.ufsm.br/app/uploads/sites/791/2020/09/aplicacoesC3.jpg" alt="">
@@ -150,5 +154,43 @@
             </div>
         </div>
     </footer>
+
+    <!-- Modals -->
+
+    <div class="modal fade" id="AddNewProject" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">Adicionar novo projeto</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="/insertProject">
+                        <div class="mb-3">
+                            <label for="ProjectName" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="ProjectName" name="ProjectName">
+                        </div>
+                        <div class="mb-3">
+                            <label for="ProjectDescription" class="form-label">Descrição</label>
+                            <input type="text" class="form-control" id="ProjectDescription" name="ProjectDescription">
+                        </div>
+                        <div class="mb-3">
+                            <label for="ProjectLink" class="form-label">Link do projeto</label>
+                            <input type="text" class="form-control" id="ProjectLink" name="ProjectLink">
+                        </div>
+                        <div class="mb-3">
+                            <label for="ProjectImg" class="form-label">Imagem do Projeto</label>
+                            <input type="file" class="form-control" id="ProjectImg" name="ProjectImg" accept="image/*">
+                        </div>
+                        <button type="submit" class="btn btn-primary fw-bold text-uppercase">Adicionar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 </body>
 </html>
